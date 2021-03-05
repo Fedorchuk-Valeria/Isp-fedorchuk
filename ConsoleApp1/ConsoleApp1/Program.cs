@@ -36,7 +36,7 @@ namespace ConsoleApp1
         static void CallAFriend(int number)
         {
             Random rand = new Random();
-            int friendHelp = rand.Next(number + 1, number + 2);
+            int friendHelp = rand.Next(number, number + 2);
             Console.WriteLine("Your friend think, that money in " + friendHelp + " box!");
         }
         static void Main(string[] args)
