@@ -64,7 +64,7 @@ namespace ConsoleApp1
                 }
             }
 
-            if (temp3 == "Y")
+            if (temp3 == "N")
             {
                 Console.WriteLine("You should choose one of five boxes that contain money. If you guess correctly," + "\nyou get a certain amount and the rate rises.If you don't guess, your money is taken away." + 
                 "\nYou have the right to use hints. Winning - your balance exceeds 100, loss - 0.\n\n");
