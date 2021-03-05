@@ -17,7 +17,7 @@ namespace ConsoleApp1
         }
         static void Hint50_50(int number)
         {
-            int[] withoutMoney = new int[2] { number+1, number+1 };
+            int[] withoutMoney = new int[2] { number, number };
             Random rand = new Random();
             for (int i = 0; i < 2; i++)
             {
