@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace lab2
 {
@@ -23,7 +19,6 @@ namespace lab2
             lenght = str.Length;
             for (int i = 0; i < lenght; i++)
             {
-             
                 k = i;
                 temp2 = i;
                 while ( i < lenght && str[i] != ' ') 
@@ -69,19 +64,14 @@ namespace lab2
                         }
                         Console.WriteLine($"   {number}\n");
                     }
-                    
                     i = temp2 + wordLenght;
-                    number = 0;    
-                   
+                    number = 0;   
                 } else 
                 {
-                    i = k;
-                    
+                    i = k;       
                 }
 
             }
-
         }
     }
 }
-
