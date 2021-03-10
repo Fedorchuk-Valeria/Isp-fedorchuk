@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace lab1_2
 {
@@ -10,26 +6,24 @@ namespace lab1_2
     {
         static void Main(string[] args)
         {
-            int lenghtTime, lenghtData1, lenghtData2;
-            string time = DateTime.Now.ToString("HH:mm:ss");
-            string data1 = DateTime.Now.ToString("dd MMMM yyyy");
-            string data2 = DateTime.Now.ToString("dd:MM:yyyy");
-            Console.WriteLine(time + "  " + data1 + "  " + data2);
-            lenghtTime = time.Length;
-            lenghtData1 = data1.Length;
-            lenghtData2 = data2.Length;
+            int lenght1, lenght2;
+            string dateTime1 = DateTime.Now.ToString("dd MMMM yyyy HH:mm:ss");
+            string dateTime2 = DateTime.Now.ToString("dd/MM/yyyy hh:mm");
+            Console.WriteLine($"{dateTime1}  {dateTime2}");
+            lenght1 = dateTime1.Length;
+            lenght2 = dateTime2.Length;
             int[] arr = new int[10] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
             for(int i = 0; i < 10; i++)
             {
-               for(int j = 0; j < lenghtTime; j++)
+               for(int j = 0; j < lenght1; j++)
                {
-                    if(time[j] == i  + '0')
+                    if(dateTime1[j] == i  + '0')
                     {
                         arr[i]++;
                     }
                }
             }
-            Console.WriteLine("In the time:");
+            Console.WriteLine("In the datetime of the first format:");
             for (int i = 0; i < 10; i++)
             {
                 Console.WriteLine($"{i} - {arr[i]} pieces");
@@ -38,32 +32,15 @@ namespace lab1_2
 
             for (int i = 0; i < 10; i++)
             {
-                for (int j = 0; j < lenghtData1; j++)
+                for (int j = 0; j < lenght2; j++)
                 {
-                    if (data1[j] == i + '0')
+                    if (dateTime2[j] == i + '0')
                     {
                         arr[i]++;
                     }
                 }
             }
-            Console.WriteLine("In the date of the first format:");
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine($"{i} - {arr[i]} pieces");
-                arr[i] = 0;
-            }
-
-            for (int i = 0; i < 10; i++)
-            {
-                for (int j = 0; j < lenghtData2; j++)
-                {
-                    if (data2[j] == i + '0')
-                    {
-                        arr[i]++;
-                    }
-                }
-            }
-            Console.WriteLine("In the date of the second format:");
+            Console.WriteLine("In the datetime of the second format:");
             for (int i = 0; i < 10; i++)
             {
                 Console.WriteLine($"{i} - {arr[i]} pieces");
@@ -72,4 +49,3 @@ namespace lab1_2
         }
     }
 }
-
