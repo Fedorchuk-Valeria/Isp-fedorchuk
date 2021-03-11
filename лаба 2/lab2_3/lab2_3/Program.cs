@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace lab2_3
 {
@@ -17,6 +17,7 @@ namespace lab2_3
                 {
                     Console.WriteLine("Input Error. Try again");
                 }
+
                 if (a < -1 || a == 0)
                 {
                     Console.WriteLine("Input Error. Try again");
@@ -98,21 +99,24 @@ namespace lab2_3
         static void Main(string[] args)
         {
             double a = -1, b = -1, СDegrees = -1;
-            double c, BDegrees, ADegrees, P, S, r, R;
+
             Console.WriteLine("Enter the first side of the triangle:");
             a = InputCheckForSides(a);
+
             Console.WriteLine("Enter the second side of the triangle:");
             b = InputCheckForSides(b);
+
             Console.WriteLine("Enter the angle between these sides(degrees):");
             СDegrees = InputCheckForCorners(СDegrees);
-            c = CosineTheorem(a, b, СDegrees);
-            //Console.WriteLine(c);
-            BDegrees = SineTheorem(c, СDegrees, b);
-            ADegrees = ThirdСorner(СDegrees, BDegrees);
-            P = Perimeter(a, b, c);
-            S = Square(a, b, СDegrees);
-            r = InscribedСircle(S, P);
-            R = CircumscribedСircle(a, b, c, S);
+
+            double c = CosineTheorem(a, b, СDegrees);
+            double BDegrees = SineTheorem(c, СDegrees, b);
+            double ADegrees = ThirdСorner(СDegrees, BDegrees);
+            double P = Perimeter(a, b, c);
+            double S = Square(a, b, СDegrees);
+            double r = InscribedСircle(S, P);
+            double R = CircumscribedСircle(a, b, c, S);
+
             Console.WriteLine($"Sides of the triangle - {a}, {b}, {c}");
             Console.WriteLine($"Angles of the triangle - {ADegrees}, {BDegrees}, {СDegrees}");
             Console.WriteLine($"Perimeter of the triangle - {P}");
@@ -122,3 +126,4 @@ namespace lab2_3
         }
     }
 }
+
