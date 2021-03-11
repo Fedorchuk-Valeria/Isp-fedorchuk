@@ -54,7 +54,6 @@ namespace lab2_3
             double c, СRadian;
             СRadian = C * Math.PI / 180;
             c = Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2) - 2 * a * b * Math.Cos(СRadian));
-            c = Math.Round(c, 3, MidpointRounding.AwayFromZero);
             return c;
         }
 
