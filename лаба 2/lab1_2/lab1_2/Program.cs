@@ -6,13 +6,13 @@ namespace lab1_2
     {
         static void Main(string[] args)
         {
-            int lenght1, lenght2;
             string dateTime1 = DateTime.Now.ToString("dd MMMM yyyy HH:mm:ss");
             string dateTime2 = DateTime.Now.ToString("dd/MM/yyyy hh:mm");
             Console.WriteLine($"{dateTime1}  {dateTime2}");
-            lenght1 = dateTime1.Length;
-            lenght2 = dateTime2.Length;
+            int lenght1 = dateTime1.Length;
+            int lenght2 = dateTime2.Length;
             int[] arr = new int[10] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
             for(int i = 0; i < 10; i++)
             {
                for(int j = 0; j < lenght1; j++)
@@ -23,6 +23,7 @@ namespace lab1_2
                     }
                }
             }
+
             Console.WriteLine("In the datetime of the first format:");
             for (int i = 0; i < 10; i++)
             {
@@ -40,6 +41,7 @@ namespace lab1_2
                     }
                 }
             }
+
             Console.WriteLine("In the datetime of the second format:");
             for (int i = 0; i < 10; i++)
             {
