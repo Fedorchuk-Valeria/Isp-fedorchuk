@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace lab2
 {
@@ -7,16 +7,21 @@ namespace lab2
         static void Main(string[] args)
         {
             string str;
-            int lenght, k, s, temp, temp2, wordLenght;
             double number = 0;
             Console.WriteLine("Enter line:");
             str = Console.ReadLine();
+
             while (str == "" || str == " ")
             {
                 Console.WriteLine("Try again");
                 str = Console.ReadLine();
             }
+
+            int k, s, temp, temp2, wordLenght;
+            int lenght;
+            int count = 0;
             lenght = str.Length;
+
             for (int i = 0; i < lenght; i++)
             {
                 k = i;
@@ -28,9 +33,11 @@ namespace lab2
                 }
                 
                 i = temp2;
+
                 if ((str[i] >= '0' && str[i] <= '9') || (str[i] >= 'A' && str[i] <= 'F'))
                 {
                     wordLenght = k - i;
+
                     for (temp = i+1; temp < k;)
                     {
                         if ((str[temp] >= '0' && str[temp] <= '9') || (str[temp] >= 'A' && str[temp] <= 'F'))
@@ -42,8 +49,10 @@ namespace lab2
                             break;
                         }
                     }
+
                     if (temp == k)
                     {
+                        count++;
                         for (k = k - 1; k >= i; k--)
                         {
                             switch (str[k])
@@ -64,13 +73,19 @@ namespace lab2
                         }
                         Console.WriteLine($"   {number}\n");
                     }
+                    
                     i = temp2 + wordLenght;
-                    number = 0;   
-                } else 
+                    number = 0;      
+                } 
+                else 
                 {
-                    i = k;       
+                    i = k;
                 }
+            }
 
+            if(count == 0)
+            {
+                Console.WriteLine("There are no words matching the condition");
             }
         }
     }
