@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace lab_3
 {
@@ -6,23 +6,25 @@ namespace lab_3
     {
         static void Main(string[] args)
         {
-            Person.Human me = new Person.Human("lera", "fedorchuk", 17, "woman", "average", "absent", "single");
-            Person.Human man = new Person.Human("zhenya", "gromyko", 18, "man", "average", "absent", "single");
-            me.Information();
-            man.Information();
-            me.ChangeOfPassportData("valerya");
-            me.Information();
-            me.ChangeOfPassportData("lera", "fed");
-            me.Information();
-            me.Marriage(man);
-            man.Marriage(me);
-            me.GrowingUp();
-            me.Marriage(man);
-            man.Marriage(me);
-            me.Information();
-            man.Information();
-            Console.WriteLine(me["marital status"]);
-            Console.WriteLine(me.Name);
+            Person.Human girlfriend = new Person.Human("anua987654", "cidorchuk", 17, "woman", "average", "absent", "single");
+            Person.Human boyfriend = new Person.Human("sasha", "fedorchuk", 18, "man", "average", "absent", "single");
+            girlfriend.Information();
+            boyfriend.Information();
+            girlfriend.ChangeOfPassportData("valerya");
+            girlfriend.Information();
+            girlfriend.ChangeOfPassportData("lera", "fed");
+            girlfriend.Information();
+            girlfriend.Marriage(boyfriend);
+            boyfriend.Marriage(girlfriend);
+            girlfriend.GrowingUp();
+            girlfriend.Marriage(boyfriend);
+            boyfriend.Marriage(girlfriend);
+            girlfriend.Information();
+            boyfriend.Information();
+            girlfriend.Divorce();
+            girlfriend.Information();
+            Console.WriteLine(girlfriend["marital status"]);
+            Console.WriteLine(girlfriend.Name);
         }
     }
 }
@@ -38,8 +40,10 @@ namespace Person
         protected string _education;
         protected string _profession;
         protected string _maritalStatus;
+        private string _maidenName;
         protected uint _id;
         static uint _amount;
+
         static string CheckData(string str, int a, int b)
         {
             int count = -1;
@@ -55,7 +59,7 @@ namespace Person
                 }
                 if (count != str.Length)
                 {
-                    Console.WriteLine($"{str} - valid data. Try again");
+                    Console.WriteLine($"{str} - invalid data. Try again");
                     str = Console.ReadLine();
                 }
             }
@@ -69,11 +73,12 @@ namespace Person
         public Human(string name, string surname, ushort age, string gender, string education, string profession, string maritalStatus)
         {
             _name = CheckData(name, 97, 122);
-            _surname = CheckData(surname, 97, 122); ;
+            _surname = CheckData(surname, 97, 122);
+            _maidenName = _surname;
             _age = age;
             while (gender != "man" && gender != "woman")
             {
-                Console.WriteLine("{_dender} - valid gender. Try again");
+                Console.WriteLine($"{_gender} - invalid gender. Try again");
                 gender = Console.ReadLine();
             }
             _gender = gender;
@@ -81,7 +86,7 @@ namespace Person
             _profession = CheckData(profession, 97, 122);
             while (maritalStatus != "married" && maritalStatus != "single")
             {
-                Console.WriteLine("Valid gender. Try again");
+                Console.WriteLine("Invalid gender. Try again");
                 maritalStatus = Console.ReadLine();
             }
             _maritalStatus = maritalStatus;
@@ -96,6 +101,7 @@ namespace Person
                 return _name;
             }
         }
+
         public string Surname
         {
             get
@@ -103,6 +109,7 @@ namespace Person
                 return _surname;
             }
         }
+
         public ushort Age
         {
             get
@@ -110,6 +117,7 @@ namespace Person
                 return _age;
             }
         }
+
         public string Gender
         {
             get
@@ -117,6 +125,7 @@ namespace Person
                 return _gender;
             }
         }
+
         public string MaritalStatus
         {
             get
@@ -124,20 +133,31 @@ namespace Person
                 return _maritalStatus;
             }
         }
+
         public string Education
         {
             get
             {
                 return _education;
             }
+            set
+            {
+                _education = CheckData(value, 97, 122);
+            }
         }
+
         public string Profession
         {
             get
             {
                 return _profession;
             }
+            set
+            {
+                _profession = CheckData(value, 97, 122);
+            }
         }
+
         public string this[string fieldName]
         {
             get
@@ -158,7 +178,7 @@ namespace Person
 
         public void Marriage(Human partner)
         {
-            if (_age >= 18 && partner._age > 18)
+            if (_age >= 18 && partner._age >= 18)
             {
                 _maritalStatus = "married";
                 if (_gender == "woman")
@@ -168,34 +188,28 @@ namespace Person
             }
             else if (partner._age < 18)
             {
-                Console.WriteLine("You cannot get married. Your partner is underage.");
+                Console.WriteLine($"{_name}, you cannot get married. Your partner is underage.");
             }
             else
             {
-                Console.WriteLine("You cannot get married.You are underage.");
+                Console.WriteLine($"{_name}, you cannot get married.You are underage.");
             }
         }
-        public void Divorce(string maidenName)
-        {
-            if (_gender == "woman" && _maritalStatus == "married")
-            {
-                _maritalStatus = "single";
-                _surname = maidenName;
-            }
-            else
-            {
-                Console.WriteLine("You cannot divorce");
-            }
-        }
+
         public void Divorce()
         {
             if (_gender == "man" && _maritalStatus == "married")
             {
                 _maritalStatus = "single";
             }
+            else if(_gender == "woman" && _maritalStatus == "married")
+            {
+                _surname = _maidenName;
+                _maritalStatus = "single";
+            }
             else
             {
-                Console.WriteLine("You cannot divorce. Not enough information");
+                Console.WriteLine("You cannot divorce");
             }
         }
         public void ChangeOfPassportData(string newName)
