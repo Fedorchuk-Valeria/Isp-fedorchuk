@@ -72,17 +72,23 @@ namespace lab4_1
             switch(info.wProcessorArchitecture)
             {
                 case 0: 
-                    typeOfProcessor = "Intel x86"; break;
+                    typeOfProcessor = "Intel x86"; 
+                    break;
                 case 5:
-                    typeOfProcessor = "ARM"; break;
+                    typeOfProcessor = "ARM"; 
+                    break;
                 case 6:
-                    typeOfProcessor = "IA64 Intel Itanium-based"; break;
+                    typeOfProcessor = "IA64 Intel Itanium-based"; 
+                    break;
                 case 9:
-                    typeOfProcessor = "AMD64 x64 (AMD or Intel)"; break;
+                    typeOfProcessor = "AMD64 x64 (AMD or Intel)"; 
+                    break;
                 case 12:
-                    typeOfProcessor = "ARM64"; break;
+                    typeOfProcessor = "ARM64"; 
+                    break;
                 default: 
-                    typeOfProcessor = "Unknown architecture."; break;
+                    typeOfProcessor = "Unknown architecture.";
+                    break;
             }
             Console.WriteLine($"Type of Processor: {typeOfProcessor}");
 
