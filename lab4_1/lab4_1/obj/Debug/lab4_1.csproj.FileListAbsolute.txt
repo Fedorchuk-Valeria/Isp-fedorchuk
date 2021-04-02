@@ -1,0 +1,7 @@
+E:\lab isp\lab4_1\lab4_1\bin\Debug\lab4_1.exe.config
+E:\lab isp\lab4_1\lab4_1\bin\Debug\lab4_1.exe
+E:\lab isp\lab4_1\lab4_1\bin\Debug\lab4_1.pdb
+E:\lab isp\lab4_1\lab4_1\obj\Debug\lab4_1.csprojAssemblyReference.cache
+E:\lab isp\lab4_1\lab4_1\obj\Debug\lab4_1.csproj.CoreCompileInputs.cache
+E:\lab isp\lab4_1\lab4_1\obj\Debug\lab4_1.exe
+E:\lab isp\lab4_1\lab4_1\obj\Debug\lab4_1.pdb
