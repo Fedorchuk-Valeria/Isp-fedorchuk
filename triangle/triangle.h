@@ -6,17 +6,16 @@
 #define TRIANGLE_API __declspec(dllimport)
 #endif
 
-
 extern "C" TRIANGLE_API double __stdcall CosineTheorem(double a, double b, double C);
 
 extern "C" TRIANGLE_API double __cdecl SineTheorem(double c, double C, double b);
 
-extern "C" TRIANGLE_API double __stdcall Third—orner(double B, double C);
+extern "C" TRIANGLE_API double __stdcall Third√ëorner(double B, double C);
 
 extern "C" TRIANGLE_API double __cdecl Perimeter(double a, double b, double c);
 
 extern "C" TRIANGLE_API double __stdcall Square(double a, double b, double C);
 
-extern "C" TRIANGLE_API double __cdecl Inscribed—ircle(double S, double P);
+extern "C" TRIANGLE_API double __cdecl Inscribed√ëircle(double S, double P);
 
-extern "C" TRIANGLE_API double __cdecl Circumscribed—ircle(double a, double b, double c, double S);
+extern "C" TRIANGLE_API double __cdecl Circumscribed√ëircle(double a, double b, double c, double S);
