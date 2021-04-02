@@ -1,7 +1,0 @@
-E:\lab isp\lab4_2\lab4_2\bin\Debug\lab4_2.exe.config
-E:\lab isp\lab4_2\lab4_2\bin\Debug\lab4_2.exe
-E:\lab isp\lab4_2\lab4_2\bin\Debug\lab4_2.pdb
-E:\lab isp\lab4_2\lab4_2\obj\Debug\lab4_2.csprojAssemblyReference.cache
-E:\lab isp\lab4_2\lab4_2\obj\Debug\lab4_2.csproj.CoreCompileInputs.cache
-E:\lab isp\lab4_2\lab4_2\obj\Debug\lab4_2.exe
-E:\lab isp\lab4_2\lab4_2\obj\Debug\lab4_2.pdb
