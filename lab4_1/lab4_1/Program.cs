@@ -3,7 +3,6 @@ using System.Runtime.InteropServices;
 
 namespace lab4_1
 {
-
     class ComputerInformation
     {
         [DllImport("kernel32.dll")]
@@ -17,7 +16,6 @@ namespace lab4_1
 
         [DllImport("advapi32.dll")]
         public static extern int GetUserName(StringBuilder buffer, ref int sizeBuffer);
-
 
         [StructLayout(LayoutKind.Sequential)]
         public struct SYSTEM_INFO
@@ -48,18 +46,18 @@ namespace lab4_1
             Console.WriteLine($"Computer name: {bufferForComputerName}");
 
             StringBuilder bufferForUserName = new StringBuilder(16);
-            int lenght4 = bufferForUserName.Capacity;
-            ComputerInformation.GetUserName(bufferForUserName, ref lenght4);
+            int lenght2 = bufferForUserName.Capacity;
+            ComputerInformation.GetUserName(bufferForUserName, ref lenght2);
             Console.WriteLine($"User name: {bufferForUserName}");
 
             StringBuilder bufferForSystemDirectory = new StringBuilder(16);
-            int lenght2 = bufferForSystemDirectory.Capacity;
-            ComputerInformation.GetSystemDirectory(bufferForSystemDirectory, ref lenght2);
+            int lenght3 = bufferForSystemDirectory.Capacity;
+            ComputerInformation.GetSystemDirectory(bufferForSystemDirectory, ref lenght3);
             Console.WriteLine($"System directory: {bufferForSystemDirectory}");
 
             StringBuilder bufferForWindowsDirectory = new StringBuilder(16);
-            int lenght3 = bufferForWindowsDirectory.Capacity;
-            ComputerInformation.GetWindowsDirectory(bufferForWindowsDirectory, ref lenght2);
+            int lenght4 = bufferForWindowsDirectory.Capacity;
+            ComputerInformation.GetWindowsDirectory(bufferForWindowsDirectory, ref lenght4);
             Console.WriteLine($"Windows Directory: {bufferForWindowsDirectory}");
 
             ComputerInformation.SYSTEM_INFO info;
@@ -87,8 +85,6 @@ namespace lab4_1
                     break;
             }
             Console.WriteLine($"Type of Processor: {typeOfProcessor}");
-
         }
-
     }
 }
