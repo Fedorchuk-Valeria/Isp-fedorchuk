@@ -21,7 +21,7 @@ namespace lab_3
             Alesya.GetGrants();
             Alesya.Deduct();
             Alesya.Information();*/
-            Student Nastya = new StudentIAPT("nastya", "tsyrelchuk", 20, "woman", "secondary", 3, "daytime", "budgetPas form");
+            Student Nastya = new StudentIAPT("nastya", "tsyrelchuk", 20, "woman", "secondary", 3, "daytime", "budget form");
             Nastya.PassTheSession();
             Nastya.GetGrants();
             Nastya.Information();
