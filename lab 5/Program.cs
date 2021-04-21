@@ -25,7 +25,6 @@ namespace lab_3
             Nastya.PassTheSession();
             Nastya.GetGrants();
             Nastya.Information();
-
         }
     }
 }
