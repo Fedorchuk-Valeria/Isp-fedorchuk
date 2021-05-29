@@ -15,10 +15,10 @@ namespace lab_3
 
         static private int maxPoint;
         private RecordBook recordBook = new RecordBook();
-
-        public delegate int Mark(int subject, Random rand);
         
+        public delegate int Mark(int subject, Random rand);
         static public event Mark ExamAnswer;
+        
         static int FivePointSystem(int subject, Random rand)
         {
             maxPoint = 5;
